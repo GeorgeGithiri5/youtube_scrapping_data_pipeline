@@ -96,6 +96,17 @@ python-versions = "*"
 importlib-resources = {version = ">=5.0", markers = "python_version < \"3.10\""}
 
 [[package]]
+name = "flatten-json"
+version = "0.1.13"
+description = "Flatten JSON objects"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
 name = "google-api-core"
 version = "2.11.0"
 description = "Google API client core library"
@@ -517,7 +528,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "5a9789c12c85158ba8544ca4b654a6ff82e005c417aac1edde3befdf547e5ae6"
+content-hash = "66215612345c3f5092b1f7515659c24e097282eeee6d258a69c31a45846bb070"
 
 [metadata.files]
 appdirs = []
@@ -530,6 +541,7 @@ charset-normalizer = []
 colorama = []
 cssselect = []
 fake-useragent = []
+flatten-json = []
 google-api-core = []
 google-api-python-client = []
 google-auth = []

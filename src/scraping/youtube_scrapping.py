@@ -1,6 +1,7 @@
 from requests_html import HTMLSession
 import os
 import pandas as pd
+from flatten_json import flatten
 
 import googleapiclient.discovery
 
@@ -32,10 +33,14 @@ def main():
         videoId="XTjtPc0uiG8"
     )
     response = request.execute()
-
-    dataframe = pd.DataFrame.from_dict(response)
+    response = response['items']
+    listing = []
     
-    print(dataframe)
+    for item in response:
+        data = flatten(item)
+        listing.append(data)
+    
+    
 
 if __name__ == "__main__":
     main()
