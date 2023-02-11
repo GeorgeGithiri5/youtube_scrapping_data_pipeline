@@ -6,6 +6,10 @@ authors = ["GeorgeGithiri5 <georgegithiri002@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+youtube-video-scraping = "^1.0.4"
+requests-html = "^0.10.0"
+google-api-python-client = "^2.77.0"
+pandas = "^1.5.3"
 
 [tool.poetry.dev-dependencies]
 
