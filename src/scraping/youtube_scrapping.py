@@ -7,7 +7,7 @@ import googleapiclient.discovery
 
 api_service_name = "youtube"
 api_version = "v3"
-DEVELOPER_KEY = "AIzaSyB32r77YhdQiheZicUEJA-2sQZXT1tIAgI"
+DEVELOPER_KEY = os.environ['DEVELOPER_KEY']
 
 def query_youtube_search():
     session = HTMLSession()
