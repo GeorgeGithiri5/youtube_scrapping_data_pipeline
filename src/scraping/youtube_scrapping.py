@@ -2,12 +2,16 @@ from requests_html import HTMLSession
 import os
 import pandas as pd
 from flatten_json import flatten
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import googleapiclient.discovery
 
 api_service_name = "youtube"
 api_version = "v3"
-DEVELOPER_KEY = os.environ['DEVELOPER_KEY']
+DEVELOPER_KEY = os.getenv('DEVELOPER_KEY')
+print(DEVELOPER_KEY)
 
 def query_youtube_search():
     session = HTMLSession()

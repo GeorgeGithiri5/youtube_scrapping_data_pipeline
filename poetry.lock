@@ -378,6 +378,17 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-dotenv"
+version = "0.21.1"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
 name = "pytz"
 version = "2022.7.1"
 description = "World timezone definitions, modern and historical"
@@ -528,7 +539,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "66215612345c3f5092b1f7515659c24e097282eeee6d258a69c31a45846bb070"
+content-hash = "60cfb69fc40f5e2f36975545ab11badea7132a01a3fff4cfbfd9d315c7712bf8"
 
 [metadata.files]
 appdirs = []
@@ -563,6 +574,7 @@ pyparsing = []
 pyppeteer = []
 pyquery = []
 python-dateutil = []
+python-dotenv = []
 pytz = []
 requests = []
 requests-html = []

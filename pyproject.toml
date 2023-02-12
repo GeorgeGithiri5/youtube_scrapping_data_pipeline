@@ -11,6 +11,7 @@ requests-html = "^0.10.0"
 google-api-python-client = "^2.77.0"
 pandas = "^1.5.3"
 flatten-json = "^0.1.13"
+python-dotenv = "^0.21.1"
 
 [tool.poetry.dev-dependencies]
 
