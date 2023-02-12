@@ -32,8 +32,6 @@ def get_youtube_links(response):
     
     return link_list
 
-links_list = get_youtube_links(response)
-
 def get_youtube_video_ids(links_list):
     """
         Description: Get youtube video ids from links collected
@@ -48,18 +46,14 @@ def get_youtube_video_ids(links_list):
         
     return video_ids
 
-def main():
-    # Disable OAuthlib's HTTPS verification when running locally.
-    # *DO NOT* leave this option enabled in production.
+def get_data_from_youtube(video_ids):
     os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
     youtube = googleapiclient.discovery.build(
         api_service_name, api_version, developerKey = DEVELOPER_KEY)
-    video_ids = get_youtube_video_ids(links_list)
     dataset = pd.DataFrame()
     
     for id in video_ids:
-        print(f"{id}")
         request = youtube.commentThreads().list(
             part="id, snippet",
             videoId= f"{id}"
@@ -79,11 +73,15 @@ def main():
 
         dataframe = pd.DataFrame(listing)
         dataset = dataset.append(dataframe)
-        print(dataframe.shape)
-        print(dataset.shape)
     
-    dataset.to_csv("data.csv")
-    print("exported")
+    return dataset
+
+def main():
+    links_list = get_youtube_links(response)
+    video_ids = get_youtube_video_ids(links_list)
+    df = get_data_from_youtube(video_ids)
+    
+    return df    
 
 if __name__ == "__main__":
     main()
